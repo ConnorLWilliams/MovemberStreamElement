@@ -61,5 +61,6 @@ def main():
     if __name__=="__main__":
         app.run(host=host, port=port) 
 
-
-main()
+@app.before_first_request
+def startup():
+    main()
