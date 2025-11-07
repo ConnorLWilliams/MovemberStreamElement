@@ -54,8 +54,8 @@ def main():
     # Scraping Thread
     Thread(target=update_value, daemon=True, args=(url, html_div_type, html_class, sleep_time)).start()
     
-    public_url = ngrok.connect(port)
-    print("Public URL:", public_url)
+    #public_url = ngrok.connect(port) --> Removed to change to Render
+    #print("Public URL:", public_url)
 
     #Start Flask app
     app.run(host=host, port=port) 
