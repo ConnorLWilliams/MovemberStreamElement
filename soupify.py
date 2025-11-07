@@ -58,7 +58,8 @@ def main():
     #print("Public URL:", public_url)
 
     #Start Flask app
-    app.run(host=host, port=port) 
-    
-if __name__ == "__main__":
-    main()
+    if __name__=="__main__":
+        app.run(host=host, port=port) 
+
+
+main()
