@@ -11,6 +11,8 @@ app = Flask(__name__)
 CORS(app)
 donations = None
 
+startup_flag = True
+
 def update_value(url, html_div_type, html_class, sleep_time):
     global donations
     while True:
@@ -61,6 +63,9 @@ def main():
     if __name__=="__main__":
         app.run(host=host, port=port) 
 
-@app.before_first_request
+@app.before_request
 def startup():
-    main()
+    global startup_flag
+    if startup_flag:
+        startup_flag = False
+        main()
