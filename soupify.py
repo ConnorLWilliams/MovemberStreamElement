@@ -5,8 +5,10 @@ from flask import Flask, jsonify
 from threading import Thread
 import configparser
 from pyngrok import ngrok
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 donations = None
 
 def update_value(url, html_div_type, html_class, sleep_time):
